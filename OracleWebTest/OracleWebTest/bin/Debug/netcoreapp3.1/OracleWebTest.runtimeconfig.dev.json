@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/Users/smartsport/.dotnet/store/|arch|/|tfm|",
+      "/Users/smartsport/.nuget/packages"
+    ]
+  }
+}

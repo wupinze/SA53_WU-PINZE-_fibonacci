@@ -1,0 +1,16 @@
+services:
+  oraclewebtest:
+    build:
+      context: /Users/smartsport/Desktop/Oracle/OracleWebTest
+      dockerfile: OracleWebTest/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: oraclewebtest
+    ports:
+    - target: 80
+    - target: 443
+    volumes:
+    - /Users/smartsport/.aspnet/https:/root/.aspnet/https:ro
+    - /Users/smartsport/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
+version: '3.4'

@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <DockerComposeProjectPath>../docker-compose.dcproj</DockerComposeProjectPath>
+    <UserSecretsId>0d3e8df8-8aa9-4161-8b43-569be53f30be</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Fibonacci\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Fibonacci\" />
+  </ItemGroup>
+</Project>

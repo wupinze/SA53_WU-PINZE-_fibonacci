@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  oraclewebtest:
+    image: ${DOCKER_REGISTRY-}oraclewebtest
+    build:
+      context: .
+      dockerfile: OracleWebTest/Dockerfile
