@@ -29,7 +29,7 @@ namespace OracleWebTest.Controllers
             if (elements != null)
             {
                 int fibCount = int.Parse(elements);
-                List<List<int>> result = getTheFibonacciNumber(fibCount);
+                List<long[]> result = getTheFibonacciNumber1(fibCount);
                 return Json(new { fibonacci = result[0], sorted = result[1] });
             }
             return View();
@@ -77,6 +77,51 @@ namespace OracleWebTest.Controllers
             {
                 return getFibonacci(n - 1) + getFibonacci(n - 2);
             }
+        }
+        
+        
+        public static List<long[]> getTheFibonacciNumber1(int count) {
+
+            List<long[]> TotalList = new List<long[]>();
+            long[] myList = new long[count];
+            long[] sortList = new long[count];
+
+            if (count == 0)
+            {
+                myList[0] = 0;
+               
+            }
+
+            if (count == 1)
+            {
+                myList[0] = 0;
+                myList[1] = 1;
+            }
+
+            if (count > 1)
+            {
+                myList[0] = 0;
+                myList[1] = 1;
+             
+                for (int i = 2; i < count; i++)
+                {
+                    //myList.IndexOf(i - 1);
+                    long number = myList[i-1] + myList[i - 2];
+                    myList[i] = number;
+                }
+            }
+
+            for (int i = 0; i < myList.Length; i++)
+            {
+                sortList[i] = myList[myList.Length - 1 - i];
+            }
+
+            TotalList.Add(myList);
+          
+            TotalList.Add(sortList);
+
+            return TotalList;
+
         }
 
 
